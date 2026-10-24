@@ -29,6 +29,20 @@ Claude のアカウント全体に入れるスキルと、いつも守ってほ�
 - doc-coauthoring: 質問は AskUserQuestion が使えるときはそれでまとめて出すようにした
 - webapp-testing: 例のスクリプトの保存先（`/mnt/user-data/outputs`、`/tmp`）を、Windows でも動くよう作業フォルダに変えた
 
+### プラグインから差し替えたもの（トークン削減版）
+元のプラグインを無効にして、こちらを入れる。元の作者の更新は届かなくなる。
+
+| スキル | 元の配布 | 変えたこと |
+|---|---|---|
+| natural-japanese | プラグイン（MIT） | 説明文を約735→約300トークンに短縮。本文の言い回しを詰めた（工程・基準・数値は維持）。lint のパスの不統一を修正 |
+| design-taste-frontend | プラグイン | 文章は変えず、§2〜6・§8〜12・付録を `references/` に節番号ごと移し、作業に応じて読む形にした。SKILL.md は約22,000→約3,900トークン |
+| teach | プラグイン | SKILL.md を短縮。GLOSSARY-FORMAT.md へのリンクを追加 |
+| setup-progress | プラグイン | SKILL.md と、プロジェクトに作るファイル（CLAUDE.md の節、save-progress）を短縮 |
+| deepseek-coder | プラグイン | 説明文を日本語にして本文を短縮 |
+| grilling | プラグイン | 短縮。質問は AskUserQuestion でまとめて出すようにした |
+
+grill-me（grilling を呼ぶだけ）と yomiyasu（毎回全手順を使うため、削ると性能が落ちる）は、プラグインのまま使う。
+
 ## 入れ方
 
 1. `./build.sh` を実行すると、`dist/` にスキルごとの zip ができる

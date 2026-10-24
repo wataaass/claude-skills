@@ -57,3 +57,15 @@ grill-me（grilling を呼ぶだけ）と yomiyasu（毎回全手順を使うた
 - 自分の PC の `~/.claude/CLAUDE.md`（Windows では `%USERPROFILE%\.claude\CLAUDE.md`）
 
 クラウドの Claude Code ではこの2つが読まれないことがあるため、よく使うリポジトリには同じ内容を `CLAUDE.md` に書いておく。
+
+## ステータスライン（自分の PC の Claude Code 用）
+
+画面下に、会話の使用率（コンテキストのうち使った割合）を出す。50% で黄色、70% で赤になり「/clear 推奨」と出る。
+
+入れ方（Windows）: `statusline` フォルダで PowerShell を開き、次を実行して Claude Code を起動し直す。
+
+```
+powershell -ExecutionPolicy Bypass -File .\install.ps1
+```
+
+`~/.claude/statusline.ps1` を置き、`~/.claude/settings.json` に `statusLine` を足す。ほかの設定は残し、元のファイルは `settings.json.bak` に残す。
